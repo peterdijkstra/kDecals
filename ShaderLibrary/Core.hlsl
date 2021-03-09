@@ -11,11 +11,11 @@ half decal_AngleFalloff;
 
 half4 _ZeroColor;
 
-SAMPLER(_Linear_Clamp_sampler);
+SAMPLER(_Point_Clamp_sampler);
 
 // -------------------------------------
 // Macros
-#define SAMPLE_DECAL2D(texture, positionPS) SAMPLE_TEXTURE2D(texture, _Linear_Clamp_sampler, positionPS.xy / positionPS.w);
+#define SAMPLE_DECAL2D(texture, positionPS) SAMPLE_TEXTURE2D(texture, _Point_Clamp_sampler, positionPS.xy / positionPS.w);
 #define CLAMP_PROJECTION(color, positionPS, normalWS) color = ClampProjection(color, positionPS, normalWS);
 
 // -------------------------------------
